@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Media Lab</title>
 </head>
@@ -15,11 +16,14 @@
             <div class="brand-name">
                 <a href="index.html">MediaLab</a>
             </div>
+            <div class="nav-toggle">
+                <span></span>
+            </div>
             <nav class="nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#events">EVENTS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
@@ -29,7 +33,7 @@
 
 <!-- Home Section Start -->
 
-<section class="home-section">
+<section class="home-section" id="home">
     <!-- Shape -->
     <div class="shape-01">
     </div>
@@ -45,7 +49,7 @@
 <!-- Home Section End -->
 
 <!-- Events Start -->
-<section class="events-section">
+<section class="events-section" id="events">
     <div class="container">
         <div class="row">
             <div class="section-title">
@@ -106,7 +110,7 @@
             <!-- Event Item Start -->
             <div class="event-item">
                 <div class="event-item-inner">
-                    <img src="/images/forår.jpg" alt="spring">
+                    <img src="/images/comingsoon.jpg" alt="comingsoon">
                     <div class="overlay">
                         <h4>COMING SOON</h4>
                     </div>
@@ -120,7 +124,7 @@
 <!-- Events End -->
 
 <!-- Contact Section Start -->
-<section class="contact-section">
+<section class="contact-section" id="contact">
     <div class="container">
         <div class="row">
             <div class="contact-img">
@@ -152,14 +156,74 @@
                         </div>
                     </div>
                     <div class="form-btn">
-                        <button type="button" class="btn btn-01">SEND MESSAGE</button>
+                        <button type="button" class="btn">SEND MESSAGE</button>
                     </div>
                 </form>
             </div>
         </div>
+        <div class="row">
+            <div class="contact-info">
+                <div class="row">
+                    <!-- Info Item Start -->
+                    <div class="info-item">
+                        <h5>ADDRESS</h5>
+                        <p>LYKKEVEJ 2C, 2300 KBH S</p>
+                    </div>
+                    <!-- Info Item End -->
+                    <!-- Info Item Start -->
+                    <div class="info-item">
+                        <h5>PHONE</h5>
+                        <p>+45 32323232</p>
+                    </div>
+                    <!-- Info Item End -->
+                    <!-- Info Item Start -->
+                    <div class="info-item">
+                        <h5>EMAIL</h5>
+                        <p>MEDIALAB@MEDIALAB.COM</p>
+                    </div>
+                    <!-- Info Item End -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="social-links">
+                <a href="#" title="facebook"><img src="/images/facebook.png" alt="facebook"></a>
+                <a href="#" title="twitter"><img src="/images/twitter.png" alt="twitter"></a>
+                <a href="#" title="linkedin"><img src="/images/linkedin.png" alt="linkedin"></a>
+                <a href="#" title="instagram"><img src="/images/instagram.png" alt="instagram"></a>
+            </div>
+        </div>
+
     </div>
 </section>
 <!-- Contact Section End -->
 
+<!-- Copyright Text -->
+
+<p class="copyright">&copy; 2021 MEDIALAB</p>
+
+<script>
+    $(document).ready(function(){
+
+      $("a").on('click', function(event) {
+    
+        if (this.hash !== "") {
+
+          event.preventDefault();
+    
+          var hash = this.hash;
+    
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+       
+            window.location.hash = hash;
+          });
+        } 
+      });
+    });
+    </script>
+    <script src="main.js"></script>
 </body>
 </html>
